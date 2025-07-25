@@ -1282,6 +1282,13 @@ if(XERCES_USE_NETACCESSOR_CURL)
   target_include_directories(xerces-c SYSTEM PRIVATE ${CURL_INCLUDE_DIRS})
 endif()
 
+if(OS2)
+    set_target_properties(xerces-c PROPERTIES
+        OS2_DEF_VENDOR "$ENV{VENDOR}"
+        OS2_DEF_PATCH "${XERCES_VERSION_REVISION}"
+        OS2_DEF_VERSION "${VERSION}")
+endif()
+
 if(MSVC)
   # Add configuration-specific library name to resource file.
   target_compile_definitions(xerces-c PRIVATE "XERCES_DLL_NAME=\"$<TARGET_FILE_NAME:xerces-c>\\0\"")
