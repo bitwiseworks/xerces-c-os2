@@ -44,6 +44,9 @@
 #  include <netdb.h>
 #endif
 #include <errno.h>
+#if __OS2__
+#  include <libcx/net.h>
+#endif
 
 #include <xercesc/util/NetAccessors/Socket/UnixHTTPURLInputStream.hpp>
 #include <xercesc/util/XMLString.hpp>
