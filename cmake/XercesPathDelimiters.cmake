@@ -22,7 +22,7 @@
 set(path_delims /)
 
 set(xerces_path_delimiter_backslash_default OFF)
-if(WIN32)
+if(WIN32 OR OS2)
   set(xerces_path_delimiter_backslash_default ON)
 endif()
 
